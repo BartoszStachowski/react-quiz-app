@@ -5,9 +5,7 @@ import QUESTIONS from '../question';
 
 // components
 import Question from './Question';
-
-// img
-import quizCompleteImge from '../assets/quiz-complete.png';
+import Summary from './Summary';
 
 export default function Quiz() {
   const [userAnswers, setUserAnswers] = useState([]);
@@ -27,12 +25,7 @@ export default function Quiz() {
   );
 
   if (quizIsComplete) {
-    return (
-      <div id="summary">
-        <img src={quizCompleteImge} alt="Throphy icon" />
-        <h2>Quiz Completed!</h2>
-      </div>
-    );
+    return <Summary userAnswers={userAnswers} />;
   }
 
   return (
